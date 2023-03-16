@@ -36,9 +36,9 @@ class EditingVC: UIViewController {
     
     @IBAction func saveButton(_ sender: Any) {
         if let index {
-            editNote(in: &notes, index: index, newNote: textView.text)
-        } else if textView.text != ""{
-            addNote(to: &notes, note: textView.text)
+            editNote(in: &notes, index: index, newNote: textView.text, key: .notes)
+        } else if textView.text != "" {
+            addNote(to: &notes, note: textView.text, key: .notes)
         }
     }
 }

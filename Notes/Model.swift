@@ -7,27 +7,35 @@
 
 import Foundation
 
-var notes: [String] = ["First note", "Another one very biiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiig note", "And one more", "Very big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big big  note"]
+enum UDKeys: String {
+    case notes
+}
 
-func addNote(to array: inout [String], note: String) {
+var notes: [String] = ["First note."]
+
+
+func addNote(to array: inout [String], note: String, key: UDKeys) {
     array.insert(note, at: 0)
-    saveData()
+    saveData(array: array, key: key)
 }
 
-func deleteNote(in array: inout [String], at index: Int) {
+func deleteNote(in array: inout [String], at index: Int, key: UDKeys) {
     array.remove(at: index)
-    saveData()
+    saveData(array: array, key: key)
 }
 
-func editNote(in array: inout [String], index: Int, newNote: String) {
+func editNote(in array: inout [String], index: Int, newNote: String, key: UDKeys) {
     array[index] = newNote
-    saveData()
+    saveData(array: array, key: key)
 }
 
-func loadData() {
-    
+func loadData(array: inout
+[String], key: UDKeys) {
+    if let data = UserDefaults.standard.array(forKey: key.rawValue) as? [String] {
+        array = data
+    }
 }
 
-func saveData() {
-    
+func saveData(array: [String], key: UDKeys) {
+    UserDefaults.standard.set(array, forKey: key.rawValue)
 }

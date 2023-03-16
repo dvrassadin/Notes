@@ -19,6 +19,8 @@ class NotesVC: UITableViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         tableView.reloadData()
     }
 
@@ -57,7 +59,7 @@ class NotesVC: UITableViewController {
             let alertController = UIAlertController(title: nil, message: "Are you sure you want to delete the note?", preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
             let deleteAction = UIAlertAction(title: "Delete Note", style: .destructive) {_ in
-                deleteNote(in: &notes, at: indexPath.row)
+                deleteNote(in: &notes, at: indexPath.row, key: .notes)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
             
