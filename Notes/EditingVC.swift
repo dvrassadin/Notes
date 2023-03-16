@@ -22,6 +22,8 @@ class EditingVC: UIViewController {
         } else {
             self.title = "New note"
         }
+        
+        textView.becomeFirstResponder()
     }
     
     
