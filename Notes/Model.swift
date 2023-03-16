@@ -19,6 +19,15 @@ func deleteNote(in array: inout [String], at index: Int) {
     saveData()
 }
 
+func editNote(in array: inout [String], index: Int, newNote: String) {
+    array[index] = newNote
+    saveData()
+}
+
+func loadData() {
+    
+}
+
 func saveData() {
     
 }
