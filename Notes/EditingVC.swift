@@ -24,9 +24,10 @@ class EditingVC: UIViewController {
         }
     }
     
+    
+    // MARK: - Navigation
+    
     /*
-     // MARK: - Navigation
-     
      // In a storyboard-based application, you will often want to do a little preparation before navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      
@@ -35,9 +36,8 @@ class EditingVC: UIViewController {
     
     @IBAction func saveButton(_ sender: Any) {
         if let index {
-            notes[index] = textView.text
-            saveData()
-        } else {
+            editNote(in: &notes, index: index, newNote: textView.text)
+        } else if textView.text != ""{
             addNote(to: &notes, note: textView.text)
         }
     }
