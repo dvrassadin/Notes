@@ -44,6 +44,7 @@
 		513B13A129C302E80003D4C4 = {
 			isa = PBXGroup;
 			children = (
+				513B13C329C303550003D4C4 /* .gitignore */,
 				513B13AC29C302E80003D4C4 /* Notes */,
 				513B13AB29C302E80003D4C4 /* Products */,
 			);
@@ -66,7 +67,6 @@
 				513B13B329C302E80003D4C4 /* Main.storyboard */,
 				513B13B629C302E80003D4C4 /* Assets.xcassets */,
 				513B13B829C302E80003D4C4 /* LaunchScreen.storyboard */,
-				513B13C329C303550003D4C4 /* .gitignore */,
 				513B13C129C302FA0003D4C4 /* FocusStart_iOS_TestTask.pdf */,
 				513B13BB29C302E80003D4C4 /* Info.plist */,
 			);
