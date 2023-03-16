@@ -14,6 +14,8 @@
 		513B13BA29C302E80003D4C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 513B13B829C302E80003D4C4 /* LaunchScreen.storyboard */; };
 		513B13C229C302FA0003D4C4 /* FocusStart_iOS_TestTask.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 513B13C129C302FA0003D4C4 /* FocusStart_iOS_TestTask.pdf */; };
 		513B13C429C303550003D4C4 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 513B13C329C303550003D4C4 /* .gitignore */; };
+		513B13C629C30ED60003D4C4 /* NotesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B13C529C30ED60003D4C4 /* NotesVC.swift */; };
+		513B13C829C30F240003D4C4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B13C729C30F240003D4C4 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		513B13BB29C302E80003D4C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		513B13C129C302FA0003D4C4 /* FocusStart_iOS_TestTask.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = FocusStart_iOS_TestTask.pdf; path = ../../../Downloads/FocusStart_iOS_TestTask.pdf; sourceTree = "<group>"; };
 		513B13C329C303550003D4C4 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		513B13C529C30ED60003D4C4 /* NotesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesVC.swift; sourceTree = "<group>"; };
+		513B13C729C30F240003D4C4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,8 @@
 			children = (
 				513B13AD29C302E80003D4C4 /* AppDelegate.swift */,
 				513B13AF29C302E80003D4C4 /* SceneDelegate.swift */,
+				513B13C529C30ED60003D4C4 /* NotesVC.swift */,
+				513B13C729C30F240003D4C4 /* Model.swift */,
 				513B13B329C302E80003D4C4 /* Main.storyboard */,
 				513B13B629C302E80003D4C4 /* Assets.xcassets */,
 				513B13B829C302E80003D4C4 /* LaunchScreen.storyboard */,
@@ -144,7 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				513B13AE29C302E80003D4C4 /* AppDelegate.swift in Sources */,
+				513B13C629C30ED60003D4C4 /* NotesVC.swift in Sources */,
 				513B13B029C302E80003D4C4 /* SceneDelegate.swift in Sources */,
+				513B13C829C30F240003D4C4 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
