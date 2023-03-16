@@ -34,11 +34,16 @@ class EditingVC: UIViewController {
      }
      */
     
-    @IBAction func saveButton(_ sender: Any) {
+    @IBAction func doneButton(_ sender: Any) {
         if let index {
             editNote(in: &notes, index: index, newNote: textView.text, key: .notes)
         } else if textView.text != "" {
             addNote(to: &notes, note: textView.text, key: .notes)
+        }
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "NotesVC") {
+            self.navigationController?.pushViewController(vc, animated: true)
+            vc.navigationItem.setHidesBackButton(true, animated: false)
         }
     }
 }

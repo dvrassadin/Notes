@@ -29,8 +29,7 @@ func editNote(in array: inout [String], index: Int, newNote: String, key: UDKeys
     saveData(array: array, key: key)
 }
 
-func loadData(array: inout
-[String], key: UDKeys) {
+func loadData(array: inout [String], key: UDKeys) {
     if let data = UserDefaults.standard.array(forKey: key.rawValue) as? [String] {
         array = data
     }

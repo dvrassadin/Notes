@@ -12,7 +12,8 @@ class NotesVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = 65
+        self.tableView.rowHeight = 70
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -21,7 +22,7 @@ class NotesVC: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        tableView.reloadData()
+        self.tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -53,12 +54,11 @@ class NotesVC: UITableViewController {
     }
     */
 
-    // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let alertController = UIAlertController(title: nil, message: "Are you sure you want to delete the note?", preferredStyle: .alert)
             let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
-            let deleteAction = UIAlertAction(title: "Delete Note", style: .destructive) {_ in
+            let deleteAction = UIAlertAction(title: "Delete Note", style: .destructive) { _ in
                 deleteNote(in: &notes, at: indexPath.row, key: .notes)
                 tableView.deleteRows(at: [indexPath], with: .fade)
             }
@@ -66,26 +66,8 @@ class NotesVC: UITableViewController {
             alertController.addAction(deleteAction)
             alertController.addAction(cancelAction)
             present(alertController, animated: true)
-            
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     // MARK: - Navigation
 
