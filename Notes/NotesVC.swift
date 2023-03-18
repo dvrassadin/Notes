@@ -16,7 +16,6 @@ class NotesVC: UITableViewController {
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,7 +39,6 @@ class NotesVC: UITableViewController {
         var content = cell.defaultContentConfiguration()
         
         content.text = notes[indexPath.row]
-        
         cell.contentConfiguration = content
         
         return cell

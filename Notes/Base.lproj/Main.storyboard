@@ -54,12 +54,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SbP-vC-HwD">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="SbP-vC-HwD">
                                 <rect key="frame" x="16" y="91" width="343" height="687"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES" shipmentTrackingNumber="YES" flightNumber="YES" lookupSuggestion="YES"/>
                             </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yNt-Ej-fh2"/>
@@ -71,8 +71,8 @@
                             <constraint firstItem="yNt-Ej-fh2" firstAttribute="trailing" secondItem="SbP-vC-HwD" secondAttribute="trailing" constant="16" id="wZ9-X4-UnH"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" style="editor" id="rqL-Eg-IK1">
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="RB0-nu-MV8">
+                    <navigationItem key="navigationItem" id="rqL-Eg-IK1">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="RB0-nu-MV8">
                             <connections>
                                 <action selector="doneButton:" destination="uve-bw-385" id="hjx-fB-wxb"/>
                             </connections>
@@ -106,12 +106,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Sox-VF-ZOS"/>
+        <segue reference="Ker-U3-1ZQ"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

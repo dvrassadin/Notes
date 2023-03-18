@@ -7,12 +7,11 @@
 
 import Foundation
 
+var notes: [String] = ["First note."]
+
 enum UDKeys: String {
     case notes
 }
-
-var notes: [String] = ["First note."]
-
 
 func addNote(to array: inout [String], note: String, key: UDKeys) {
     array.insert(note, at: 0)

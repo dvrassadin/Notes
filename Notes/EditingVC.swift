@@ -17,13 +17,20 @@ class EditingVC: UIViewController {
         super.viewDidLoad()
         
         if let index {
-            textView.text = notes[index]
             self.title = "Edit note"
+            textView.text = notes[index]
         } else {
             self.title = "New note"
+            textView.becomeFirstResponder()
         }
         
-        textView.becomeFirstResponder()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTextView), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateTextView), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func updateTextView(notification: Notification) {
+        
     }
     
     
