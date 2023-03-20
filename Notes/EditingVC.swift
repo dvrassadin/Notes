@@ -24,24 +24,32 @@ class EditingVC: UIViewController {
             textView.becomeFirstResponder()
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTextView), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resizeTextView(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(updateTextView), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resizeTextView(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc func updateTextView(notification: Notification) {
+    /// Resize TextView when keyboard opens.
+    @objc func resizeTextView(_ notification: Notification) {
+        guard let userInfo = notification.userInfo as? [String: Any],
+              let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
         
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            textView.contentInset = UIEdgeInsets.zero
+            textView.verticalScrollIndicatorInsets = .zero
+        } else if notification.name == UIResponder.keyboardWillShowNotification {
+            textView.contentInset = UIEdgeInsets(top: 0,
+                                                 left: 0,
+                                                 bottom: keyboardFrame.height,
+                                                 right: 0)
+            textView.verticalScrollIndicatorInsets = textView.contentInset
+        }
     }
     
     
     // MARK: - Navigation
-    
-    /*
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     
-     }
-     */
     
     @IBAction func doneButton(_ sender: Any) {
         if let index {
