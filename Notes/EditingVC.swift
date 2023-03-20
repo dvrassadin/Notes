@@ -29,7 +29,7 @@ class EditingVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(resizeTextView(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    /// Resize TextView when keyboard opens.
+    /// Resize the TextView when the keyboard opens.
     @objc func resizeTextView(_ notification: Notification) {
         guard let userInfo = notification.userInfo as? [String: Any],
               let keyboardFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {

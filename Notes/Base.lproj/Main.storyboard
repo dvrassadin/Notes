@@ -71,6 +71,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rqL-Eg-IK1">
+                        <barButtonItem key="leftBarButtonItem" title="Item" id="Mgj-uA-oz6"/>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="RB0-nu-MV8">
                             <connections>
                                 <action selector="doneButton:" destination="uve-bw-385" id="hjx-fB-wxb"/>
