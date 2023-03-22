@@ -53,7 +53,7 @@ class EditingVC: UIViewController {
     
     func goToNotesVC() {
         if let vc = storyboard?.instantiateViewController(withIdentifier: "NotesVC") {
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.navigationController?.pushViewController(vc, animated: false)
             vc.navigationItem.setHidesBackButton(true, animated: false)
         }
     }
@@ -96,31 +96,6 @@ class EditingVC: UIViewController {
         } else {
             self.textView.text == "" ? goToNotesVC() : createAlert()
         }
-        
-//        let alertControllet = UIAlertController(title: nil, message: "Do you want to save the changes?", preferredStyle: .alert)
-//        let discardAction = UIAlertAction(title: "Discard Changes", style: .destructive) { _ in
-//            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotesVC") {
-//                self.navigationController?.pushViewController(vc, animated: true)
-//                vc.navigationItem.setHidesBackButton(true, animated: false)
-//            }
-//        }
-//        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
-//            if let index = self.index {
-//                if notes[index] != self.textView.text {
-//                    editNote(in: &notes, index: index, newNote: self.textView.text, key: .notes)
-//                }
-//            } else if self.textView.text != "" {
-//                addNote(to: &notes, note: self.textView.text, key: .notes)
-//            }
-//            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotesVC") {
-//                self.navigationController?.pushViewController(vc, animated: true)
-//                vc.navigationItem.setHidesBackButton(true, animated: false)
-//            }
-//        }
-//        alertControllet.addAction(discardAction)
-//        alertControllet.addAction(saveAction)
-//        present(alertControllet, animated: true)
-//
     }
     
 }
