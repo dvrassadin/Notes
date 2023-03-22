@@ -71,7 +71,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="rqL-Eg-IK1">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="Mgj-uA-oz6"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" image="chevron.backward" catalog="system" id="Mgj-uA-oz6">
+                            <connections>
+                                <action selector="backButton:" destination="uve-bw-385" id="yD7-vH-RWW"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="RB0-nu-MV8">
                             <connections>
                                 <action selector="doneButton:" destination="uve-bw-385" id="hjx-fB-wxb"/>
@@ -109,6 +113,7 @@
         <segue reference="Ker-U3-1ZQ"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="chevron.backward" catalog="system" width="97" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

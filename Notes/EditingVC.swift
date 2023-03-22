@@ -51,6 +51,13 @@ class EditingVC: UIViewController {
     
     // MARK: - Navigation
     
+    func goToNotesVC() {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "NotesVC") {
+            self.navigationController?.pushViewController(vc, animated: true)
+            vc.navigationItem.setHidesBackButton(true, animated: false)
+        }
+    }
+    
     @IBAction func doneButton(_ sender: Any) {
         if let index {
             editNote(in: &notes, index: index, newNote: textView.text, key: .notes)
@@ -58,9 +65,62 @@ class EditingVC: UIViewController {
             addNote(to: &notes, note: textView.text, key: .notes)
         }
         
-        if let vc = storyboard?.instantiateViewController(withIdentifier: "NotesVC") {
-            self.navigationController?.pushViewController(vc, animated: true)
-            vc.navigationItem.setHidesBackButton(true, animated: false)
-        }
+        goToNotesVC()
     }
+    
+    @IBAction func backButton(_ sender: Any) {
+        func createAlert(index: Int? = self.index) {
+            let alertController = UIAlertController(title: nil, message: "Do you want to save the changes?", preferredStyle: .alert)
+            let discardAction = UIAlertAction(title: "Discard Changes", style: .destructive) { _ in
+                self.goToNotesVC()
+            }
+            let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+                self.goToNotesVC()
+                if let index {
+                    if self.textView.text == "" {
+                        deleteNote(in: &notes, at: index, key: .notes)
+                    } else {
+                        editNote(in: &notes, index: index, newNote: self.textView.text, key: .notes)
+                    }
+                } else {
+                    addNote(to: &notes, note: self.textView.text, key: .notes)
+                }
+            }
+            alertController.addAction(discardAction)
+            alertController.addAction(saveAction)
+            present(alertController, animated: true)
+        }
+        
+        if let index {
+            self.textView.text == notes[index] ? goToNotesVC() : createAlert()
+        } else {
+            self.textView.text == "" ? goToNotesVC() : createAlert()
+        }
+        
+//        let alertControllet = UIAlertController(title: nil, message: "Do you want to save the changes?", preferredStyle: .alert)
+//        let discardAction = UIAlertAction(title: "Discard Changes", style: .destructive) { _ in
+//            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotesVC") {
+//                self.navigationController?.pushViewController(vc, animated: true)
+//                vc.navigationItem.setHidesBackButton(true, animated: false)
+//            }
+//        }
+//        let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
+//            if let index = self.index {
+//                if notes[index] != self.textView.text {
+//                    editNote(in: &notes, index: index, newNote: self.textView.text, key: .notes)
+//                }
+//            } else if self.textView.text != "" {
+//                addNote(to: &notes, note: self.textView.text, key: .notes)
+//            }
+//            if let vc = self.storyboard?.instantiateViewController(withIdentifier: "NotesVC") {
+//                self.navigationController?.pushViewController(vc, animated: true)
+//                vc.navigationItem.setHidesBackButton(true, animated: false)
+//            }
+//        }
+//        alertControllet.addAction(discardAction)
+//        alertControllet.addAction(saveAction)
+//        present(alertControllet, animated: true)
+//
+    }
+    
 }
