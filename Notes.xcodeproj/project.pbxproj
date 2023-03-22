@@ -17,6 +17,7 @@
 		513B13C829C30F240003D4C4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B13C729C30F240003D4C4 /* Model.swift */; };
 		513B13CA29C328120003D4C4 /* EditingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 513B13C929C328120003D4C4 /* EditingVC.swift */; };
 		513B13CC29C33C5F0003D4C4 /* FocusStart_iOS_TestTask.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 513B13CB29C33C5F0003D4C4 /* FocusStart_iOS_TestTask.pdf */; };
+		51F36F7D29CAF59400FDBE1A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 51F36F7C29CAF59400FDBE1A /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		513B13C729C30F240003D4C4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		513B13C929C328120003D4C4 /* EditingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingVC.swift; sourceTree = "<group>"; };
 		513B13CB29C33C5F0003D4C4 /* FocusStart_iOS_TestTask.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = FocusStart_iOS_TestTask.pdf; path = Notes/FocusStart_iOS_TestTask.pdf; sourceTree = "<group>"; };
+		51F36F7C29CAF59400FDBE1A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		513B13A129C302E80003D4C4 = {
 			isa = PBXGroup;
 			children = (
+				51F36F7C29CAF59400FDBE1A /* README.md */,
 				513B13CB29C33C5F0003D4C4 /* FocusStart_iOS_TestTask.pdf */,
 				513B13C329C303550003D4C4 /* .gitignore */,
 				513B13AC29C302E80003D4C4 /* Notes */,
@@ -137,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F36F7D29CAF59400FDBE1A /* README.md in Resources */,
 				513B13C429C303550003D4C4 /* .gitignore in Resources */,
 				513B13BA29C302E80003D4C4 /* LaunchScreen.storyboard in Resources */,
 				513B13B729C302E80003D4C4 /* Assets.xcassets in Resources */,
